@@ -14,19 +14,30 @@ function NewKegForm(){
           id='brand'
           placeholder='Brand'/>
         <input
-        type="integer"
+        type="number"
           id='price'
           placeholder='Price'/>
         <input
-          type='integer'
+          type='number'
           id='abv'
           placeholder='Alcohol by volume'/>
+        <input
+          type='number'
+          id='pints'
+          placeholder='124'/>
         <button type='submit'>Add!</button>
       </form>
     </div>
   )
 }
 
+NewKegForm.propTypes = {
+  name: PropTypes.string,
+  brand: PropTypes.string,
+  price: PropTypes.number,
+  abv: PropTypes.number,
+  pints: PropTypes.number
+}
 
 
-export default NewTicketForm
+export default NewKegForm
