@@ -7,11 +7,11 @@ const Routes = () => (
     <Route exact path="/" component={Home} />
     <Route path="/brothersIpa" component={BrothersIPA} />
     <Route path="/beer" component={Beer} />
-    <Route path="/wicked" component={Wicked} />
+    <Route path="/wickedIpa" component={Wicked} />
     <Route path="/topAmberAle" component={TopAmberAle} />
     <Route path="/thisPorter" component={ThisPorter} />
     <Route path="/brothersPaleAle" component={BrothersPaleAle} />
-    <Route path="/grate" component={Grate} />
+    <Route path="/gratePilsner" component={Grate} />
   </Switch>
 );
 

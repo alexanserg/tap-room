@@ -1,4 +1,10 @@
 export { default as Home } from './Home';
 export { default as Beer } from './Beer';
+export { default as BrothersIPA } from './BrothersIPA';
+export { default as BrothersPaleAle } from './BrothersPaleAle';
+export { default as Grate } from './Grate';
+export { default as ThisPorter } from './ThisPorter';
+export { default as TopAmberAle } from './TopAmberAle';
+export { default as Wicked } from './Wicked';
 export { default as NewKegForm } from './NewKegForm';
 export { default as Error404 } from './Error404';

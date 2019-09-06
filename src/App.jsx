@@ -3,15 +3,15 @@ import { BrowserRouter, Link } from 'react-router-dom';
 
 import Routes from './Routes';
 
-import reactLogo from './assets/React-icon.png';
+import taplogo from './assets/images/taplogo.jpeg';
 
 const App = () => (
   <BrowserRouter>
     <main className="container">
       <div>
-        <h1>hello world!</h1>
-        <img className="container__image" alt="react logo" src={reactLogo} />
-        <p>If you see this everything is working!</p>
+        <h1>Welcome to the Tap Room!</h1>
+        <img alt="tap logo" src={taplogo} />
+        <p>Where everything is great!</p>
       </div>
       <ul className="left">
         <li>
