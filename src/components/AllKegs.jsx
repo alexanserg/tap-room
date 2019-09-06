@@ -1,9 +1,9 @@
 import React from 'react';
 
-const About = () => (
+const AllKegs= () => (
   <div>
     <h2>About Page</h2>
   </div>
 );
 
-export default About;
+export default AllKegs;
