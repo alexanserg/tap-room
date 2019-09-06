@@ -9,7 +9,7 @@ const Beer = () => (
         <li>Brand: Beer is Us</li>
         <li>Price: $3.00 per pint</li>
         <li>Alcohol by volume: 3% </li>
-        <li>Pints left in keg: !24 </li>
+        <li>Pints left in keg: 124 </li>
       </ul>
     </div>
   );
