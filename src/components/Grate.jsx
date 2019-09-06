@@ -1,14 +1,21 @@
 import React from 'react';
 
+var grate = {
+  name: "Grate Pilsner",
+  brand: "Grateful Brewing",
+  price: "3.50",
+  abv: ".05",
+  pints: "124"
+}
 const Grate = () => (
     <div>
       <h1> About this keg:</h1>
       <ul>
-        <li>Name: Grate Pilsner</li>
-        <li>Brand: Grateful Brew</li>
-        <li>Price: $3.50 per pint</li>
-        <li>Alcohol by volume: %5</li>
-        <li>Pints left in keg: 124 </li>
+        <li>Name: {grate.name}</li>
+        <li>Brand: {grate.brand} </li>
+        <li>Price: ${grate.price} per pint</li>
+        <li>Alcohol by volume: {grate.abv * 100}% </li>
+        <li>Pints left in keg: {grate.pints}</li>
       </ul>
     </div>
   );
