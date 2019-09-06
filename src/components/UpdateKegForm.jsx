@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-function NewKegForm(){
+function UpdateKegForm(){
   return (
     <div>
       <form>
@@ -31,7 +31,7 @@ function NewKegForm(){
   )
 }
 
-NewKegForm.propTypes = {
+UpdateKegForm.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.number,
@@ -40,4 +40,4 @@ NewKegForm.propTypes = {
 }
 
 
-export default NewKegForm
+export default UpdateKegForm

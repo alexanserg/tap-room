@@ -6,5 +6,5 @@ export { default as Grate } from './Grate';
 export { default as ThisPorter } from './ThisPorter';
 export { default as TopAmberAle } from './TopAmberAle';
 export { default as Wicked } from './Wicked';
-export { default as NewKegForm } from './NewKegForm';
+export { default as UpdateKegForm } from './UpdateKegForm';
 export { default as Error404 } from './Error404';

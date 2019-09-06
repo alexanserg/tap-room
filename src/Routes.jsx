@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, NewKegForm, Error404, Beer, TopAmberAle, ThisPorter, Wicked, Grate, BrothersPaleAle, BrothersIPA } from './components';
+import { Home, UpdateKegForm, Error404, Beer, TopAmberAle, ThisPorter, Wicked, Grate, BrothersPaleAle, BrothersIPA } from './components';
 
 const Routes = () => (
   <Switch>
