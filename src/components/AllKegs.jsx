@@ -53,10 +53,16 @@ var kegs = [
 
 ];
 
-const AllKegs= () => (
-  <div>
-    <h2>About Page</h2>
-  </div>
-);
+function AllKegs(props) {
+  var allKegs = kegs.map( (k) => <li key={k.name}>{k.name}</li>)
+  return (
+    <div>
+    <h3>Here are our kegs!</h3>
+    <ul>
+     <li>{allKegs}</li>
+     </ul>
+    </div>
+  );
+}
 
 export default AllKegs;
