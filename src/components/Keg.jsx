@@ -1,5 +1,4 @@
-import React from 'react';
-import Keg from "./Keg"
+import React from "react";
 
 var kegs = [
   {
@@ -53,16 +52,10 @@ var kegs = [
   },
 
 ];
-var allKegs = kegs.map( (k) => <li key={k.name}>{k.name}</li>)
-function AllKegs(props) {
-  return (
-    <div>
-    <h3>Here are our kegs!</h3>
-    <ul>
-     <li>{allKegs}</li>
-     </ul>
-    </div>
-  );
+function Keg (props){
+ return kegs
 }
 
-export default AllKegs;
+
+
+export default Keg
