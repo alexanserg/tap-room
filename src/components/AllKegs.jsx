@@ -1,5 +1,8 @@
 import React from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
 import Keg from "./Keg"
+import Beer from "./Beer"
+
 
 var kegs = [
   {
@@ -56,12 +59,20 @@ var kegs = [
 var allKegs = kegs.map( (k) => <li key={k.name}>{k.name}</li>)
 function AllKegs(props) {
   return (
+    <BrowserRouter>
     <div>
     <h3>Here are our kegs!</h3>
     <ul>
-     <li>{allKegs}</li>
+      <li><Link to="/brothersIpa">Brother's IPA</Link></li>
+      <li><Link to="/brothersPaleAle">Brother's Pale Ale</Link></li>
+      <li><Link to="/topAmberAle">Top Amber Ale</Link></li>
+      <li><Link to="/thisPorter">This Porter</Link></li>
+      <li><Link to="/wickedIpa">Wicked Imperial IPA</Link></li>
+      <li><Link to="/gratePilsner">Grate Pilsner</Link></li>
+      <li><Link to="/beer">Beer</Link></li>
      </ul>
     </div>
+    </BrowserRouter>
   );
 }
 
