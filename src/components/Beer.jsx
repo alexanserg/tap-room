@@ -1,6 +1,8 @@
 import React from 'react';
+import React, { Component } from 'react';
 
-const Beer = () => (
+class Beer extends Component
+  
     <div>
       <h1> About this keg:</h1>
       <ul>
