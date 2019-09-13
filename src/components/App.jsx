@@ -1,27 +1,56 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import Header from './Header';
+import KegList from './KegList';
+import { Switch, Route } from 'react-router-dom';
+import NewKegControl from './NewKegControl';
+import Error404 from './Error404';
+import KegController from './KegController';
+import { v4 } from 'uuid';
 
-import Routes from './Routes';
+class App extends React.Component {
 
-import taplogo from './assets/images/taplogo.jpeg';
+  constructor(props) {
+    super(props);
+    this.state ={
+      masterKegList: {},
+      selectedKeg: null
+    };
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+    this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
+  }
 
-const App = () => (
-  <BrowserRouter>
-    <main className="container">
+  handleAddingNewKegToList(newKeg){
+    var newKegId = v4();
+    var newMasterKegList = Object.assign({}, this.state.masterKegList, {
+      [newKegId]: newKeg
+    });
+    newMasterKegList[newKegId].formattedWaitTime = newMasterKegList[newKegId].timeOpen.fromNow(true);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleChangingSelectedKeg(kegId) {
+    this.setState({selectedKeg: kegId});
+  }
+  render() {
+    return (
       <div>
-        <h1>Welcome to the Tap Room!</h1>
-        <img alt="tap logo" src={taplogo} />
-        <p>Where everything is great!</p>
+        <Header/>
+        <Switch>
+          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
+          <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} /> } />
+
+          <Route path='/admin' render={(props)=><KegController
+            kegList={this.state.masterKegList}
+            onKegSelection={this.handleChangingSelectedKeg}
+            selectedKeg ={this.state.selectedKeg}
+            currentRouterPath={props.location.pathname}/>} />
+
+          <Route component={Error404} />
+        </Switch>
       </div>
-      <ul className="left">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        
-      </ul>
-      <Routes />
-    </main>
-  </BrowserRouter>
-);
+    );
+  }
+}
+
 
 export default App;

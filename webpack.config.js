@@ -1,59 +1,82 @@
-const path = require('path');
 const webpack = require('webpack');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-
-const dev = process.env.NODE_ENV !== 'production';
-
-const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  template: path.join(__dirname, '/src/index.html'),
-  filename: 'index.html',
-  inject: 'body',
-});
-
-const DefinePluginConfig = new webpack.DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify('production'),
-});
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devServer: {
-    host: 'localhost',
-    port: '3000',
-    hot: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    historyApiFallback: true,
+
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    resolve(__dirname, "src", "index.jsx")
+  ],
+
+  output: {
+    filename: 'app.bundle.js',
+    path: resolve(__dirname, 'build'),
+    publicPath: '/'
   },
-  entry: ['@babel/polyfill', 'whatwg-fetch', 'react-hot-loader/patch', path.join(__dirname, '/src/index.jsx')],
+
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+
+  devtool: '#source-map',
+
+  devServer: {
+    hot: true,
+    contentBase: resolve(__dirname, 'build'),
+    publicPath: '/'
+  },
+
   module: {
     rules: [
       {
         test: /\.jsx?$/,
+        enforce: "pre",
+        loader: "eslint-loader",
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader',
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'url-loader',
         options: {
-          limit: 10000,
-        },
+          emitWarning: true,
+          configFile: "./.eslintrc.json"
+        }
       },
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            ["es2015", {"modules": false}],
+            "react",
+          ],
+          plugins: [
+            "react-hot-loader/babel",
+            "styled-jsx/babel"
+          ]
+        }
+      },
+      {
+        test: /\.(png|gif|jp(e*)g|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }
+      }
     ],
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  output: {
-    filename: 'index.js',
-    path: path.join(__dirname, '/build'),
-  },
-  mode: dev ? 'development' : 'production',
-  plugins: dev
-    ? [HTMLWebpackPluginConfig, new webpack.HotModuleReplacementPlugin()]
-    : [HTMLWebpackPluginConfig, DefinePluginConfig],
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template:'template.ejs',
+      appMountId: 'react-app-root',
+      title: 'React Help Queue',
+      filename: resolve(__dirname, "build", "index.html"),
+    }),
+  ]
 };

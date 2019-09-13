@@ -1,14 +1,3 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-coverage
-
-# Dependency directories
+.DS_STORE
 node_modules
-
-# Optional npm cache directory
-.npm
-
-# Prod Bundle
 build
