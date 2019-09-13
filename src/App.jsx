@@ -17,13 +17,7 @@ const App = () => (
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li><Link to="/brothersIpa">Brother's IPA</Link></li>
-        <li><Link to="/brothersPaleAle">Brother's Pale Ale</Link></li>
-        <li><Link to="/topAmberAle">Top Amber Ale</Link></li>
-        <li><Link to="/thisPorter">This Porter</Link></li>
-        <li><Link to="/wickedIpa">Wicked Imperial IPA</Link></li>
-        <li><Link to="/gratePilsner">Grate Pilsner</Link></li>
-        <li><Link to="/beer">Beer</Link></li>
+        
       </ul>
       <Routes />
     </main>
