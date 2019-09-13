@@ -5,6 +5,7 @@ function NewKegForm(props){
   let _names = null;
   let _brand = null;
   let _abv = null;
+  let _price = null;
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
@@ -12,6 +13,7 @@ function NewKegForm(props){
     _names.value = '';
     _brand.value = '';
     _abv.value = '';
+    _price.value ='';
   }
   return (
     <div>
@@ -36,7 +38,7 @@ function NewKegForm(props){
           id='price'
           placeholder='What is the price per pint?'
           ref={(input) => {_price = input;}}/>
-        <button type='submit'>Help!</button>
+        <button type='submit'>Add Keg!</button>
       </form>
     </div>
   );
