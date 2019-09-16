@@ -1,5 +1,5 @@
 import React from 'react';
-import ConfirmationQuestions from './ConfirmationQuestions';
+// import ConfirmationQuestions from './ConfirmationQuestions';
 import NewKegForm from './NewKegForm';
 import PropTypes from 'prop-types';
 
