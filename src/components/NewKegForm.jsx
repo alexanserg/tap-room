@@ -33,13 +33,13 @@ function NewKegForm(props){
           ref={(input) => {_brand = input;}}/>
           <hr/>
         <input
-          type="number"
+          type="float"
           id='abv'
           placeholder='What is the alcohol content?'
           ref={(input) => {_abv = input;}}/>
           <hr/>
         <input
-          type='number'
+          type='float'
           id='price'
           placeholder='What is the price per pint?'
           ref={(input) => {_price = input;}}/>

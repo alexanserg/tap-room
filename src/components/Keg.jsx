@@ -6,7 +6,7 @@ function Keg(props) {
     <div>
       <style jsx>{'div {background-color: red;}'}</style>
       <h2>{props.brand} - {props.name}</h2>
-      <h3>{props.abv * 100}</h3>
+      <h3>{props.abv * 100}%</h3>
       <h3>${props.price} per pint</h3>
       <h3>{props.pints} pints left in keg.</h3>
       <hr/>
