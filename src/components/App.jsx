@@ -24,6 +24,7 @@ class App extends React.Component {
     var newMasterKegList = Object.assign({}, this.state.masterKegList, {
       [newKegId]: newKeg
     });
+    this.setState({masterKegList: newMasterKegList});
   }
 
   handleChangingSelectedKeg(kegId) {
