@@ -28,7 +28,6 @@ Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
   kegId: PropTypes.string.isRequired

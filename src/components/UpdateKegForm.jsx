@@ -25,7 +25,7 @@ function UpdateKegForm(){
           type='number'
           id='pints'
           placeholder='124'/>
-        <button type='submit'>Add!</button>
+        <button type='submit'>update!</button>
       </form>
     </div>
   )

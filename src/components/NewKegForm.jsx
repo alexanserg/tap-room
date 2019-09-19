@@ -21,12 +21,12 @@ function NewKegForm(props){
         <input
           type='text'
           id='names'
-          placeholder='Pair Names'
+          placeholder='Keg name'
           ref={(input) => {_names = input;}}/>
         <input
           type='text'
           id='brand'
-          placeholder='Location'
+          placeholder='Brand'
           ref={(input) => {_brand = input;}}/>
         <input
           type="number"

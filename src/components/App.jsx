@@ -2,9 +2,9 @@ import React from 'react';
 import Header from './Header';
 import KegList from './KegList';
 import { Switch, Route } from 'react-router-dom';
-import NewKegControl from './NewKegControl';
 import Error404 from './Error404';
 import KegController from './KegController';
+import NewKegForm from './NewKegForm'
 import { v4 } from 'uuid';
 
 class App extends React.Component {
@@ -24,8 +24,6 @@ class App extends React.Component {
     var newMasterKegList = Object.assign({}, this.state.masterKegList, {
       [newKegId]: newKeg
     });
-    newMasterKegList[newKegId].formattedWaitTime = newMasterKegList[newKegId].timeOpen.fromNow(true);
-    this.setState({masterKegList: newMasterKegList});
   }
 
   handleChangingSelectedKeg(kegId) {
