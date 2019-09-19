@@ -16,7 +16,6 @@ function Keg(props) {
         {kegInformation}
       </div>
     );
-  }
 }
 
 
