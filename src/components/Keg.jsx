@@ -6,15 +6,11 @@ function Keg(props) {
     <div>
       <style jsx>{'div {background-color: red;}'}</style>
       <h2>{props.brand} - {props.name}</h2>
+      <h3>{props.abv * 100}</h3>
+      <h3>${props.price} per pint</h3>
+      <h3>{props.pints} pints left in keg.</h3>
       <hr/>
     </div>;
-  if (props.currentRouterPath === '/kegController') {
-    return (
-      <div onClick={() => {props.onKegSelection(props.kegId);}}>
-        {kegInformation}
-      </div>
-    );
-  } else {
     return (
       <div>
         {kegInformation}
@@ -27,7 +23,9 @@ function Keg(props) {
 Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
-  issue: PropTypes.string,
+  abv: PropTypes.number,
+  price: PropTypes.number,
+  pints: PropTypes.number,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
   kegId: PropTypes.string.isRequired

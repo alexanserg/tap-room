@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function KegDetail(props){
   return  (
     <div>
-      <h2>{props.selectedKeg.names}</h2>
+      <h2>{props.selectedKeg.name}</h2>
       <ul>
         <li>{props.selectedKeg.brand}</li>
         <li>{props.selectedKeg.abv * 100}%</li>
